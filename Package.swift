@@ -3,20 +3,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "OpenCV",
+    name: "OpenCVPackage",
     platforms: [
         .iOS(.v10),
     ],
     products: [
         .library(
-            name: "OpenCV",
-            targets: ["OpenCV"]),
+            name: "OpenCVPackage",
+            targets: ["OpenCVPackage"]),
     ],
     dependencies: [],
     targets: [
+        .target(
+            name: "OpenCVPackage",
+            dependencies: ["OpenCV"],
+            path: "Sources/OpenCVPackage",
+            linkerSettings: [
+                .linkedLibrary("c++"),
+                .linkedFramework("Accelerate")
+            ]
+        ),
         .binaryTarget(
             name: "OpenCV",
             path: "OpenCV.xcframework"
         )
-    ]
+    ],
+    cxxLanguageStandard: .cxx11
 )
