@@ -1,0 +1,283 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OpenCV
+import Foundation
+@_exported import OpenCV
+import Swift
+extension ByteVector {
+  public convenience init(_ array: [Swift.Int8])
+  public convenience init(_ array: [Swift.UInt8])
+  public subscript(index: Swift.Int) -> Swift.Int8 {
+    get
+  }
+  public var array: [Swift.Int8] {
+    get
+  }
+  public var unsignedArray: [Swift.UInt8] {
+    get
+  }
+}
+extension ByteVector : Swift.Sequence {
+  public typealias Iterator = OpenCV.ByteVectorIterator
+  public func makeIterator() -> OpenCV.ByteVectorIterator
+  public typealias Element = OpenCV.ByteVectorIterator.Element
+}
+public struct ByteVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Int8
+  public mutating func next() -> Swift.Int8?
+}
+extension Core {
+  @nonobjc public class func meanStdDev(src: OpenCV.Mat, mean: inout [Swift.Double], stddev: inout [Swift.Double], mask: OpenCV.Mat)
+}
+extension Core {
+  @nonobjc public class func meanStdDev(src: OpenCV.Mat, mean: inout [Swift.Double], stddev: inout [Swift.Double])
+}
+extension Core {
+  @nonobjc public class func split(m: OpenCV.Mat, mv: inout [OpenCV.Mat])
+}
+extension Core {
+  @nonobjc public class func mixChannels(src: [OpenCV.Mat], dst: [OpenCV.Mat], fromTo: [Swift.Int32])
+}
+extension CvType {
+  public static var CV_8U: Swift.Int32
+  public static var CV_8S: Swift.Int32
+  public static var CV_16U: Swift.Int32
+  public static var CV_16S: Swift.Int32
+  public static var CV_32S: Swift.Int32
+  public static var CV_32F: Swift.Int32
+  public static var CV_64F: Swift.Int32
+  public static var CV_16F: Swift.Int32
+  public static var CV_8UC1: Swift.Int32
+  public static var CV_8UC2: Swift.Int32
+  public static var CV_8UC3: Swift.Int32
+  public static var CV_8UC4: Swift.Int32
+  public static var CV_8SC1: Swift.Int32
+  public static var CV_8SC2: Swift.Int32
+  public static var CV_8SC3: Swift.Int32
+  public static var CV_8SC4: Swift.Int32
+  public static var CV_16UC1: Swift.Int32
+  public static var CV_16UC2: Swift.Int32
+  public static var CV_16UC3: Swift.Int32
+  public static var CV_16UC4: Swift.Int32
+  public static var CV_16SC1: Swift.Int32
+  public static var CV_16SC2: Swift.Int32
+  public static var CV_16SC3: Swift.Int32
+  public static var CV_16SC4: Swift.Int32
+  public static var CV_32SC1: Swift.Int32
+  public static var CV_32SC2: Swift.Int32
+  public static var CV_32SC3: Swift.Int32
+  public static var CV_32SC4: Swift.Int32
+  public static var CV_32FC1: Swift.Int32
+  public static var CV_32FC2: Swift.Int32
+  public static var CV_32FC3: Swift.Int32
+  public static var CV_32FC4: Swift.Int32
+  public static var CV_64FC1: Swift.Int32
+  public static var CV_64FC2: Swift.Int32
+  public static var CV_64FC3: Swift.Int32
+  public static var CV_64FC4: Swift.Int32
+  public static var CV_16FC1: Swift.Int32
+  public static var CV_16FC2: Swift.Int32
+  public static var CV_16FC3: Swift.Int32
+  public static var CV_16FC4: Swift.Int32
+  public static var CV_CN_MAX: Swift.Int
+  public static var CV_CN_SHIFT: Swift.Int
+  public static var CV_DEPTH_MAX: Swift.Int
+  public static func CV_8UC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_8SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16UC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_32SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_32FC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_64FC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16FC(_ channels: Swift.Int32) -> Swift.Int32
+}
+extension DoubleVector {
+  public convenience init(_ array: [Swift.Double])
+  public subscript(index: Swift.Int) -> Swift.Double {
+    get
+  }
+  public var array: [Swift.Double] {
+    get
+  }
+}
+extension DoubleVector : Swift.Sequence {
+  public typealias Iterator = OpenCV.DoubleVectorIterator
+  public func makeIterator() -> OpenCV.DoubleVectorIterator
+  public typealias Element = OpenCV.DoubleVectorIterator.Element
+}
+public struct DoubleVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Double
+  public mutating func next() -> Swift.Double?
+}
+extension FloatVector {
+  public convenience init(_ array: [Swift.Float])
+  public subscript(index: Swift.Int) -> Swift.Float {
+    get
+  }
+  public var array: [Swift.Float] {
+    get
+  }
+}
+extension FloatVector : Swift.Sequence {
+  public typealias Iterator = OpenCV.FloatVectorIterator
+  public func makeIterator() -> OpenCV.FloatVectorIterator
+  public typealias Element = OpenCV.FloatVectorIterator.Element
+}
+public struct FloatVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Float
+  public mutating func next() -> Swift.Float?
+}
+extension IntVector {
+  public convenience init(_ array: [Swift.Int32])
+  public subscript(index: Swift.Int) -> Swift.Int32 {
+    get
+  }
+  public var array: [Swift.Int32] {
+    get
+  }
+}
+extension IntVector : Swift.Sequence {
+  public typealias Iterator = OpenCV.IntVectorIterator
+  public func makeIterator() -> OpenCV.IntVectorIterator
+  public typealias Element = OpenCV.IntVectorIterator.Element
+}
+public struct IntVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Int32
+  public mutating func next() -> Swift.Int32?
+}
+extension Mat {
+  public convenience init(rows: Swift.Int32, cols: Swift.Int32, type: Swift.Int32, data: [Swift.Int8])
+  public convenience init(rows: Swift.Int32, cols: Swift.Int32, type: Swift.Int32, data: [Swift.Int8], step: Swift.Int)
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int8], offset: Swift.Int, length: Swift.Int32) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int8], offset: Swift.Int, length: Swift.Int32) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32) -> [Swift.Double]
+  @discardableResult
+  public func get(indices: [Swift.Int32]) -> [Swift.Double]
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [OpenCV.Mat], flags: Swift.Int32) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [OpenCV.Mat]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imwrite(filename: Swift.String, img: OpenCV.Mat, params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imwritemulti(filename: Swift.String, img: [OpenCV.Mat], params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imencode(ext: Swift.String, img: OpenCV.Mat, buf: inout [Swift.UInt8], params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imencode(ext: Swift.String, img: OpenCV.Mat, buf: inout [Swift.UInt8]) -> Swift.Bool
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32, useHarrisDetector: Swift.Bool, k: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32, useHarrisDetector: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32, useHarrisDetector: Swift.Bool, k: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32, useHarrisDetector: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: OpenCV.Mat, corners: inout [OpenCV.Point], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: OpenCV.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32)
+}
+extension Imgproc {
+  @nonobjc public class func calcHist(images: [OpenCV.Mat], channels: [Swift.Int32], mask: OpenCV.Mat, hist: OpenCV.Mat, histSize: [Swift.Int32], ranges: [Swift.Float], accumulate: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func calcHist(images: [OpenCV.Mat], channels: [Swift.Int32], mask: OpenCV.Mat, hist: OpenCV.Mat, histSize: [Swift.Int32], ranges: [Swift.Float])
+}
+extension Imgproc {
+  @nonobjc public class func calcBackProject(images: [OpenCV.Mat], channels: [Swift.Int32], hist: OpenCV.Mat, dst: OpenCV.Mat, ranges: [Swift.Float], scale: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func findContours(image: OpenCV.Mat, contours: inout [[OpenCV.Point]], hierarchy: OpenCV.Mat, mode: OpenCV.RetrievalModes, method: OpenCV.ContourApproximationModes, offset: OpenCV.Point)
+}
+extension Imgproc {
+  @nonobjc public class func findContours(image: OpenCV.Mat, contours: inout [[OpenCV.Point]], hierarchy: OpenCV.Mat, mode: OpenCV.RetrievalModes, method: OpenCV.ContourApproximationModes)
+}
+extension Imgproc {
+  @nonobjc public class func approxPolyDP(curve: [OpenCV.Point2f], approxCurve: inout [OpenCV.Point2f], epsilon: Swift.Double, closed: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func convexHull(points: [OpenCV.Point], hull: inout [Swift.Int32], clockwise: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func convexHull(points: [OpenCV.Point], hull: inout [Swift.Int32])
+}
+extension Imgproc {
+  @nonobjc public class func convexityDefects(contour: [OpenCV.Point], convexhull: [Swift.Int32], convexityDefects: inout [OpenCV.Int4])
+}
+extension Imgproc {
+  @nonobjc public class func ellipse2Poly(center: OpenCV.Point, axes: OpenCV.Size, angle: Swift.Int32, arcStart: Swift.Int32, arcEnd: Swift.Int32, delta: Swift.Int32, pts: inout [OpenCV.Point])
+}
+extension Subdiv2D {
+  @nonobjc public func getEdgeList(edgeList: inout [OpenCV.Float4])
+}
+extension Subdiv2D {
+  @nonobjc public func getLeadingEdgeList(leadingEdgeList: inout [Swift.Int32])
+}
+extension Subdiv2D {
+  @nonobjc public func getTriangleList(triangleList: inout [OpenCV.Float6])
+}
+extension Subdiv2D {
+  @nonobjc public func getVoronoiFacetList(idx: [Swift.Int32], facetList: inout [[OpenCV.Point2f]], facetCenters: inout [OpenCV.Point2f])
+}
